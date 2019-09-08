@@ -84,6 +84,10 @@
 
 AhA ! I promise ! AH ahaha ! I will not forget ! AhaA!
 
+## Inspiration
+
+[johnmn3](https://github.com/johnmn3)'s [perc](https://github.com/johnmn3/perc)
+
 ## TODO
 
 - Support nesting of `(%| ... %)` with itself and `#(... %)`.
