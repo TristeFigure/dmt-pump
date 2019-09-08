@@ -60,7 +60,7 @@
 (= ((%| str %:1)  '(a))    "a")
 
 ;; Nice !
-(= ((%| str %:1 %other-arg:2c-opts:c)  '[a] '[b {:c c}])
+(= ((%| str %:1 %other-arg:2opts:value)  '[a] '[b {:value c}])
    "ac")
 
 ;                 _____
