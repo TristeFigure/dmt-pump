@@ -43,22 +43,25 @@
 
 
 ;; Deep access.
-;; Works like get-in. Each %-symbol must follow this syntax:
-;;   access-sym => key:access-sym || key
-;;   key        => num || num-name || name
+;; Works like get-in. Each access symbol must follow this grammar:
+;;   access-sym  => %access-sym+
+;;   access-sym+ => key:access-sym+ || key
+;;   key         => num || numname || name
 
-;; Unlike get-in, indices start at 1, however deep.
-(= ((%| str %:1) '[a])   "a")
+;; To stay consistent with the way `#(... %)` indexes arguments, and unlike get-in,
+;; indices start at 1, however deep.
+(= ((%| str %:1)  '[a])   "a")
 
 ;; Works with maps
-(= ((%| str %:a) '{a a}) "a")
-(= ((%| str %:1) '{1 a}) "a")
+(= ((%| str %:a)  '{:a a}) "a")
+(= ((%| str %:1)  '{1 a})  "a")
 
 ;; And lists
-(= ((%| str %:1) '(a))   "a")
+(= ((%| str %:1)  '(a))    "a")
 
 ;; Nice !
-(= ((%| str %:1 %vec:2bc:c) '[a] '[b {:c c}]) "ac")
+(= ((%| str %:1 %other-arg:2c-opts:c)  '[a] '[b {:c c}])
+   "ac")
 
 ;                 _____
 ;              ,-"     "-.
