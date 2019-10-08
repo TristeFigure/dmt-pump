@@ -54,7 +54,6 @@
 
 ;; Works with maps
 (= ((%| str %:a)  '{:a a}) "a")
-(= ((%| str %:1)  '{1 a})  "a")
 
 ;; And lists
 (= ((%| str %:1)  '(a))    "a")
